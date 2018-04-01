@@ -1,0 +1,6 @@
+textFile = open("7.1.txt","rt")
+print(textFile.readline())
+textFile.close()
+binFile = open("7-1.txt","rb")
+print(binFile.readline())
+binFile.close()
