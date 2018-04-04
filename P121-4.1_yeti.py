@@ -1,17 +1,26 @@
 from random import randint
+
 # 生成一个随机数
-guessnum = randint(1, 9)
+guessnum = randint(1, 100)
+
+
+def getnum():
+    gn = input("请输入一个整数：")
+    while not gn.isdigit():
+        gn = input("输入内容必须为整数：")
+    return int(gn)
+
+
 # 用户输入整数
-try:
-    num = eval(input("请输入一个整数："))
-except NameError:
-    print("Error")
+num = getnum()
 # 比较随机数大小，并输出提示
 while num != guessnum:
     if num > guessnum:
-        num = int(input("大了大了，往小死精猜！！！"))
+        print("大大大大了,",end="")
+        num = getnum()
     else:
-        num = int(input("小了小了，怎么这么小！！！"))
+        print("这么小小小啊,",end="")
+        num = getnum()
 else:
     # 猜对输出结果
     print("很不幸！你猜对了")
