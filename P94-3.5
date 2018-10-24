@@ -1,0 +1,23 @@
+width, hSquare, vSquare = 2, 1, 3
+corner, hEdge, vEdge, space = '+', ' - ', '|', "   "
+
+
+def shape1():
+    for h in range(hSquare):
+        print(corner, end="")
+        for w in range(width):
+            print(hEdge, end="")
+    print(corner)
+
+def shape2():
+    for h in range(hSquare):
+        print(vEdge, end="")
+        for w in range(width):
+            print(space, end="")
+    print(vEdge)
+
+for v in range(vSquare):
+    shape1()
+    for w in range(width):
+        shape2()
+shape1()
